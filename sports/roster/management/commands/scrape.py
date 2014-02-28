@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand, CommandError
-from bs4 import BeautifulSoup
 from roster.models import Player
+from bs4 import BeautifulSoup
 
 import urllib2
 
