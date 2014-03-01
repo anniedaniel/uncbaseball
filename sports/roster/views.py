@@ -14,7 +14,7 @@ def player(request,pk):
 def playerList(request):
 	player_list = Player.objects.all()
 	paginator = Paginator(player_list, 25)
-	page = request.Get.get('page')
+	page = request.GET.get('page')
 	try:
 		players=paginator.page(page)
 	except PageNotAnInteger:

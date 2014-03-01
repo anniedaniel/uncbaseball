@@ -1,0 +1,23 @@
+ul{
+	list-style: none;
+}
+
+a{
+	text-decoration: none;
+	color: #333;
+}
+#header{
+	background-color: #223F53;
+	color: white;
+	font-family:'Graduate', cursive;
+	padding: 10px;
+	border-bottom: 2px solid #56A0D3;
+	background-image: url('./imgs/header.jpg');
+}
+
+.player-li-box{
+	background-color: #eee;
+	margin: 5px;
+	border: 1px solid white;
+	padding: 10px;
+}

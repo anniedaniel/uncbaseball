@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+{% extends "base.html" %}
+{% load humanize %}
+
+{% block content %}
+	
+	<h3>Players: 2013-2014</h3>
+	<hr />
+	<ul>
+	{% for player in players %}
+		<li class="player-li-box">
+			<p><a href="{{player.pk}}">{{ player.name }}</a></p>
+		</li>
+	{% endfor %}
+	</ul>
+	{{ message }}
+
+{% endblock %}

@@ -2,24 +2,27 @@
 
 <html>
 <head>
-
+<link href='http://fonts.googleapis.com/css?family=Graduate' rel='stylesheet' type='text/css'>
 <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
+<link href="{{ STATIC_URL }}css/styles.css" rel="stylesheet">
 <title>{% block title %}UNC Baseball{% endblock %}</title>
 </head>
 
 <body>
 
 {% block header %}
-<div class="header">
-<p>Hi!</p>
+<div id="header">
+    <div class="container" style="background-color:#223F53">
+        <h2>UNC Athletics</h2>
+    </div>
 </div>
-{% endblock %}
 
+{% endblock %}
 <div class="container">
 
 {% block content %}
 {% endblock %}
-
+</div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script>
   less = {
