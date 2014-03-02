@@ -42,3 +42,18 @@ class Player(models.Model):
 
 	def save(self, *args, **kwargs):
 		self.name = self.name.upper()
+
+class Team(models.Model):
+	name = models.TextField(unique=False)
+	gender = models.TextField(unique=False)
+	url = models.URLField(unique=False, max_length=400)
+	roster_url = models.URLField(unique=False, max_length=400)
+	
+	class Meta(object):
+		verbose_name_plural = "Teams"
+
+	def __unicode__(self):
+		return U'%s %s' %(self.name, self.gender)
+
+	def save(self, *args, **kwargs):
+		self.name = self.name.upper()

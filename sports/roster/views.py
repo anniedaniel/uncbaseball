@@ -1,5 +1,5 @@
 # Create your views here.
-from roster.models import Player
+from roster.models import Player, Team
 from django.shortcuts import render, get_object_or_404, redirect, render_to_response
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
@@ -13,7 +13,7 @@ def player(request,pk):
 
 def playerList(request):
 	player_list = Player.objects.all()
-	paginator = Paginator(player_list, 25)
+	paginator = Paginator(player_list, 100)
 	page = request.GET.get('page')
 	try:
 		players=paginator.page(page)
@@ -25,3 +25,27 @@ def playerList(request):
 		players = paginator.page(paginator.num_pages)
 
 	return render(request, 'roster/player_list.html', {"players":players})
+
+def team(request):
+	context = get_object_or_404(Team, id=pk)
+	return render(request, "roster/team.html", {'team':team})
+
+def teamList(request):
+	team_list = Team.objects.all()
+	paginator = Paginator(team_list, 100)
+	page = request.GET.get('page')
+	try:
+		teams=paginator.page(page)
+	except PageNotAnInteger:
+		#if page is not an integer, deliver first page.
+		teamss=paginator.page(1)
+	except EmptyPage:
+		#i f page is out of range (eg 9000), deliver last page of results.
+		teamss = paginator.page(paginator.num_pages)
+
+	return render(request, 'roster/team_list.html', {"teams":teams})
+
+
+
+
+

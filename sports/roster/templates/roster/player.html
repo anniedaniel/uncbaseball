@@ -4,12 +4,28 @@
 {% load humanize %}
 
 {% block content %}
-
-	<div class="img-box">
+	
+	<div class="row">
+		<div class="col-md-5">
+			<div class="img-box">
+			</div>
+			<h3>{{ player.name }}</h3>
+			<h5> {{ player.number }}</h5>
+			<h5>{{ player.position }}</h5>
+		</div>
 	</div>
-	<h5>{{ player.name }}</h5>
-	<h5> {{ player.number }}</h5>
-	<h5>{{ player.position }}</h5>
-	{{ message }}
+	<div class="col-md-offset-6">
+	<div class="stats-border">
+		<div class="stats-box">
+			<h5>{{ player.hits }}</h5>
+		</div>
+	</div>
+	</div>
+
+	<div class="row">
+
+	<p> {{ player.story }}</p>
+	</div>
+
 
 {% endblock %}
