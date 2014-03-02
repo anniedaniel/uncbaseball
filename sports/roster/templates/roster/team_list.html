@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+
+{% extends "base.html" %}
+{% load humanize %}
+
+{% block content %}
+{% for team in teams %}
+<h5><a href="{{ team.url }}">{{team.name}}</a></h5>
+{% endfor %}
+{% endblock %}

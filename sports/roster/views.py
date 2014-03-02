@@ -27,7 +27,7 @@ def playerList(request):
 	return render(request, 'roster/player_list.html', {"players":players})
 
 def team(request):
-	context = get_object_or_404(Team, id=pk)
+	team = get_object_or_404(Team, id=pk)
 	return render(request, "roster/team.html", {'team':team})
 
 def teamList(request):
@@ -38,10 +38,10 @@ def teamList(request):
 		teams=paginator.page(page)
 	except PageNotAnInteger:
 		#if page is not an integer, deliver first page.
-		teamss=paginator.page(1)
+		teams=paginator.page(1)
 	except EmptyPage:
 		#i f page is out of range (eg 9000), deliver last page of results.
-		teamss = paginator.page(paginator.num_pages)
+		teams = paginator.page(paginator.num_pages)
 
 	return render(request, 'roster/team_list.html', {"teams":teams})
 
