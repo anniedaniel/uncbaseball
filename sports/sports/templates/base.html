@@ -16,9 +16,17 @@
     <div class="container" style="background-color:none">
         <h1>UNC Athletics</h1>
         <hr />
+        <div class="row">
+
+            <div class="col-md-1">
+                <a href="/roster/team"><h4>Teams</h4></a>
+            </div>
+            <div class="col-md-1">
+                <a href="/roster/player"><h4>Players</h4></a>
+            </div>
+        </div>
     </div>
 </div>
-
 {% endblock %}
 <div class="container">
 
@@ -33,19 +41,6 @@
 
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script>
-  less = {
-    env: "development",
-    logLevel: 2,
-    async: false,
-    fileAsync: false,
-    poll: 1000,
-    functions: {},
-    dumpLineNumbers: "comments",
-    relativeUrls: false,
-    rootpath: ":/a.com/"
-  };
-</script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/instafeed.min.js"></script>
 
 <script type="text/javascript">
