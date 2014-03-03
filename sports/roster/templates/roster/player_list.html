@@ -10,33 +10,33 @@
 		<div id="instafeed"></div>
 	</div>
 	<div class="container">
-	<h3>Players: 2013-2014</h3>
-	<hr />
-	<div class="row">
-	<ul>
-	{% for player in players %}
-	<div class="col-md-4">
-		<li>
-			<h5><a href="{{player.pk}}"><b>{{ player.number }}</b> {{ player.name }}</a></h5>
-		</li>
-	</div>
-	{% endfor %}
-	</ul>
-	</div>
-	
-	<hr />
+		<h3>Players: 2013-2014</h3>
+		<hr />
+		<div class="row">
+			<ul>
+			{% for player in players %}
+				<div class="col-md-4">
+					<li>
+						<h5><a href="{{player.pk}}"><b>{{ player.number }}</b> {{ player.name }}</a></h5>
+					</li>
+				</div>
+			{% endfor %}
+			</ul>
+		</div>
+		
+		<hr />
 
-	<div class="row">
-	<h3>Coaches</h3>
-	<ul>
-	{% for coach in coaches %}
-	<div class="col-md-6">
-	<li>
-		<h5>{{ coach.firstname }} {{ coach.lastname }} <span style="font-size: 70%">{{ coach.title }}</span></h>
-	</li>
-	</div>
-	{% endfor %}
-	</ul>
-	</div>
+		<div class="row">
+			<h3>Coaches</h3>
+			<ul>
+				{% for coach in coaches %}
+					<div class="col-md-6">
+						<li>
+							<h5>{{ coach.firstname }} {{ coach.lastname }} <span style="font-size: 70%">{{ coach.title }}</span></h>
+						</li>
+					</div>
+				{% endfor %}
+			</ul>
+		</div>
 
 {% endblock %}
