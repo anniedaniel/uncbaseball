@@ -10,3 +10,4 @@ urlpatterns = patterns('',
 	url(r'^player/$', 'roster.views.playerList', name='roster_player_list'),
 	url(r'^player/(?P<pk>\d+)$', 'roster.views.player', name='roster_player'),
 	)
+
