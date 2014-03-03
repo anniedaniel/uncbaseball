@@ -4,6 +4,7 @@ from django.shortcuts import render, get_object_or_404, redirect, render_to_resp
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def home(request):
+	context = {'message': 'This is a dynamic message variable!'}
 	return render(request, "roster/home.html", context)
 
 def player(request,pk):
@@ -11,24 +12,15 @@ def player(request,pk):
 	return render(request, "roster/player.html", {'player': player})
 
 def playerList(request):
-	player_list = Player.objects.all()
-	paginator = Paginator(player_list, 100)
-	page = request.GET.get('page')
-	try:
-		players=paginator.page(page)
-	except PageNotAnInteger:
-		#if page is not an integer, deliver first page.
-		players=paginator.page(1)
-	except EmptyPage:
-		#i f page is out of range (eg 9000), deliver last page of results.
-		players = paginator.page(paginator.num_pages)
-	coach = get_object_or_404(Coach, id=pk)
-    return render(request, "roster/player_list.html", {"coaches":coach})
-	return render(request, 'roster/player_list.html', {"players":player})
+	context = {
+		'coaches':Coach.objects.all(),
+		'players':Player.objects.all()
+	}
+	return render(request, "roster/player_list.html", context)
 
 def team(request):
 	team = get_object_or_404(Team, id=pk)
-	return render(request, "roster/team.html", {'teams':team})
+	return render(request, "roster/team.html", {'team':team})
 
 def teamList(request):
 	team_list = Team.objects.all()

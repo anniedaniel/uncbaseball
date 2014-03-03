@@ -12,6 +12,7 @@
 	<div class="container">
 	<h3>Players: 2013-2014</h3>
 	<hr />
+	<div class="row">
 	<ul>
 	{% for player in players %}
 	<div class="col-md-4">
@@ -21,15 +22,21 @@
 	</div>
 	{% endfor %}
 	</ul>
+	</div>
+	
 	<hr />
 
+	<div class="row">
 	<h3>Coaches</h3>
 	<ul>
 	{% for coach in coaches %}
-		<li class="player-li-box">
-			<h5>{{ coach.firstname }} {{ coach.lastname }}</h5> <p>{{ coach.title }}</p>
-		</li>
+	<div class="col-md-6">
+	<li>
+		<h5>{{ coach.firstname }} {{ coach.lastname }} <span style="font-size: 70%">{{ coach.title }}</span></h5>
+	</li>
+	</div>
 	{% endfor %}
 	</ul>
+	</div>
 
 {% endblock %}
