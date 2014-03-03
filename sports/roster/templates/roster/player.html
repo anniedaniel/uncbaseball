@@ -4,49 +4,48 @@
 {% load humanize %}
 
 {% block content %}
-</div><!--container-->
-		<div class="container">	
-			<div class="row">
-				<div class="col-sm-1">
-				<img src="{{ player.thumbnail }}">
-				</div>
-				<div class="col-md-offset-2">
-				<h3>{{ player.name }}</h3>
-				<h5> {{ player.number }}</h5>
-				<h5>{{ player.position }}</h5>
-				</div>
-			</div>
+
+<div class="stats-border">
+<div class="row">
+	<div class="col-sm-1">
+		<img src="{{ player.thumbnail }}" />
 	</div>
-	<div class="container">
-	<div class="stats-border">
-				<h3>Bio</h3>
-			<hr />
-		<div class="col-md-6">
-				<h5>Height: {{ player.height }}</h5>
-				<h5>Weight: {{ player.weight }}</h5>
-				<h5>High School: {{ player.highschool }}</h5>
-			<hr />
+	<div class="col-md-offset-2">
+		<h3>{{ player.name }}</h3>
+		<h5><strong>Number:</strong> {{ player.number }}</h5>
+		<h5><strong>Position:</strong> {{ player.position }}</h5>
+	</div>
+</div>
+	<h1>Bio</h1>
+	<hr />
+	<div class="row">
+		<div class="col-md-5">
+			<h4>Year: {{ player.year }}</h4>
+			<h4>Height: {{ player.height }}</h4>
+			<h4>Weight: {{ player.weight }}</h4>
+			<h4>Dominant Hand: {{ player.hand }}</h4>
+			<h4>High School: {{ player.high_school }}</h4>
 		</div>
 		<div class="col-md-offset-6">
-			<h3>Hometown</h3>
-				<img src="http://api.tiles.mapbox.com/v3/anniedaniel.h6l94pb1/pin-m-monument({{player.home_long}},{{player.home_lat}})/{{player.home_long}},{{player.home_lat}},7/400x300.png" />
+			<h4>Hometown:</h4>
+			<img src="http://api.tiles.mapbox.com/v3/anniedaniel.h6l94pb1/pin-m({{player.home_long}},{{player.home_lat}})/{{player.home_long}},{{player.home_lat}},7/350x250.png" />
 		</div>
 	</div>
-		<hr />
-		<div class="stats-border">
-			<h3>Stats</h3>
-			<hr />
-				<h5>Batting Average: {{ player.batting_agv }}</h5>
-				<h5>Hits: {{ player.hits }}</h5>
-				<h5>Runs: {{ player.runs }}</h5>
-				<h5>Homeruns: {{ player.homeruns }}</h5>
-				<h5>  </h5>
-			<hr />
+	<hr />
+		<h4>About:</h4>
+		<p>{{ player.story }}</p>
+</div>
+<div class="stats-border">
+	<h2>Stats</h2>
+	<hr />
+		<h5>Batting Average: {{ player.batting_agv }}</h5>
+		<h5>Hits: {{ player.hits }}</h5>
+		<h5>Runs: {{ player.runs }}</h5>
+		<h5>Homeruns: {{ player.homeruns }}</h5>
+		<h5>Walks: {{ player.walks }}</h5>
+		<h5>Strikeouts: {{ player.strikeouts }}
+	<hr />
 		</div>
-	<div class="row">
-
-	<p> {{ player.story }}</p>
-	</div>
 
 
 {% endblock %}
