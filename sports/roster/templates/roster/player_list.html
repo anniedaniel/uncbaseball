@@ -14,11 +14,22 @@
 	<hr />
 	<ul>
 	{% for player in players %}
+	<div class="col-md-4">
+		<li>
+			<h5><a href="{{player.pk}}"><b>{{ player.number }}</b> {{ player.name }}</a></h5>
+		</li>
+	</div>
+	{% endfor %}
+	</ul>
+	<hr />
+
+	<h3>Coaches</h3>
+	<ul>
+	{% for coach in coaches %}
 		<li class="player-li-box">
-			<p><a href="{{player.pk}}"><b>{{ player.number }}</b> {{ player.name }}</a></p>
+			<h5>{{ coach.firstname }} {{ coach.lastname }}</h5> <p>{{ coach.title }}</p>
 		</li>
 	{% endfor %}
 	</ul>
-	{{ message }}
 
 {% endblock %}

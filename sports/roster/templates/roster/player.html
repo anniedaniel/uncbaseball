@@ -19,16 +19,16 @@
 	</div>
 	<div class="container">
 	<div class="stats-border">
-		<div class="col-md-6">
-			<h3>Bio</h3>
+				<h3>Bio</h3>
 			<hr />
+		<div class="col-md-6">
 				<h5>Height: {{ player.height }}</h5>
 				<h5>Weight: {{ player.weight }}</h5>
-				<h5>Hometown: {{ player.hometown }}</h5>
 				<h5>High School: {{ player.highschool }}</h5>
 			<hr />
 		</div>
 		<div class="col-md-offset-6">
+			<h3>Hometown</h3>
 				<img src="http://api.tiles.mapbox.com/v3/anniedaniel.h6l94pb1/pin-m-monument({{player.home_long}},{{player.home_lat}})/{{player.home_long}},{{player.home_lat}},7/400x300.png" />
 		</div>
 	</div>

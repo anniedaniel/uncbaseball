@@ -58,3 +58,20 @@ class Team(models.Model):
 
 	def save(self, *args, **kwargs):
 		self.name = self.name.upper()
+
+class Coach(models.Model):
+	firstname = models.TextField(unique=False)
+	lastname = models.TextField(unique=False)
+	title = models.TextField(unique=False)
+	story = models.TextField(unique=False)
+	coaching_age = models.IntegerField(unique=False)
+
+	class Meta(object):
+		verbose_name_plural = "Coaches"
+
+	def __unicode__(self):
+		return U'%s %s' %(self.firstname, self.lastname)
+
+	def save(self, *args, **kwargs):
+		self.name = self.lastname.upper()
+
