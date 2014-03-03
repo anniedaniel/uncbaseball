@@ -4,13 +4,18 @@
 {% load humanize %}
 
 {% block content %}
-	
+	<h2>Baseball</h2>
+	</div>
+	<div class="instafeed-box">
+		<div id="instafeed"></div>
+	</div>
+	<div class="container">
 	<h3>Players: 2013-2014</h3>
 	<hr />
 	<ul>
 	{% for player in players %}
 		<li class="player-li-box">
-			<p><a href="{{player.pk}}">{{ player.name }}</a></p>
+			<p><a href="{{player.pk}}"><b>{{ player.number }}</b> {{ player.name }}</a></p>
 		</li>
 	{% endfor %}
 	</ul>

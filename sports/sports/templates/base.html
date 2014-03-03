@@ -3,6 +3,7 @@
 <html>
 <head>
 <link href='http://fonts.googleapis.com/css?family=Graduate' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Carrois+Gothic' rel='stylesheet' type='text/css'>
 <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
 <link href="{{ STATIC_URL }}css/styles.css" rel="stylesheet">
 <title>{% block title %}UNC Baseball{% endblock %}</title>
@@ -24,6 +25,8 @@
 {% block content %}
 {% endblock %}
 </div>
+
+
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script>
   less = {
@@ -38,7 +41,19 @@
     rootpath: ":/a.com/"
   };
 </script>
-<script src="{{STATIC_URL }}js/less-1.6.3.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/instafeed.min.js"></script>
+
+<script type="text/javascript">
+    var feed = new Instafeed({
+        get: 'tagged',
+        tagName: 'UNCbaseball',
+        clientId: '16a6be8222684910b2a6eefe651c0306',
+        limit: 8,
+    });
+    feed.run();
+</script>
+
+<script src="{{ STATIC_URL }}js/less-1.6.3.min.js"></script>
 <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -1,16 +1,5 @@
 [
 	{
-		"pk":1,
-		"model":"roster.Team",
-		"fields": {
-			"name": "Baseball",
-			"gender": "Men's",
-			"url": "http://www.goheels.com/SportSelect.dbml?DB_OEM_ID=3350&SPID=12960&SPSID=668152&SITE=UNC&DB_OEM_ID=3350",
-			"roster_url": "http://www.goheels.com/SportSelect.dbml?SITE=UNC&DB_OEM_ID=3350&SPID=12960&SPSID=668154"
-		}
-	},
-
-	{
 		"pk":2,
 		"model":"roster.team",
 		"fields":{
